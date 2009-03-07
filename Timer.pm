@@ -9,11 +9,11 @@ Template::Timer - Rudimentary profiling for Template Toolkit
 
 =head1 VERSION
 
-Version 0.04
+Version 0.05_01
 
 =cut
 
-our $VERSION = '0.04';
+our $VERSION = '0.05_01';
 
 =head1 SYNOPSIS
 
@@ -24,9 +24,9 @@ that wraps the C<process()> and C<include()> methods.
 Using Template::Timer is simple.
 
     my %config = ( # Whatever your config is
-        INCLUDE_PATH    => "/my/template/path",
-        COMPILE_EXT     => ".ttc",
-        COMPILE_DIR     => "/tmp/tt",
+        INCLUDE_PATH    => '/my/template/path',
+        COMPILE_EXT     => '.ttc',
+        COMPILE_DIR     => '/tmp/tt',
     );
 
     if ( $development_mode ) {
@@ -36,19 +36,19 @@ Using Template::Timer is simple.
     my $template = Template->new( \%config );
 
 Now when you process templates, HTML comments will get embedded in your
-output, which you can easily grep for.
+output, which you can easily grep for.  The nesting level is also shown.
 
-    <!-- TIMER START: process mainmenu/mainmenu.ttml -->
-    <!-- TIMER START: include mainmenu/cssindex.tt -->
-    <!-- TIMER START: process mainmenu/cssindex.tt -->
-    <!-- TIMER END: process mainmenu/cssindex.tt (0.017279 seconds) -->
-    <!-- TIMER END: include mainmenu/cssindex.tt (0.017401 seconds) -->
+    <!-- TIMER START: L1 process mainmenu/mainmenu.ttml -->
+    <!-- TIMER START: L2 include mainmenu/cssindex.tt -->
+    <!-- TIMER START: L3 process mainmenu/cssindex.tt -->
+    <!-- TIMER END:   L3 process mainmenu/cssindex.tt (17.279 ms) -->
+    <!-- TIMER END:   L2 include mainmenu/cssindex.tt (17.401 ms) -->
 
     ....
 
-    <!-- TIMER END: process mainmenu/footer.tt (0.003016 seconds) -->
-    <!-- TIMER END: include mainmenu/footer.tt (0.003104 seconds) -->
-    <!-- TIMER END: process mainmenu/mainmenu.ttml (0.400409 seconds) -->
+    <!-- TIMER END:   L3 process mainmenu/footer.tt (3.016 ms) -->
+    <!-- TIMER END:   L2 include mainmenu/footer.tt (3.104 ms) -->
+    <!-- TIMER END:   L1 process mainmenu/mainmenu.ttml (400.409 ms) -->
 
 Note that since INCLUDE is a wrapper around PROCESS, calls to INCLUDEs
 will be doubled up, and slightly longer than the PROCESS call.
@@ -56,26 +56,67 @@ will be doubled up, and slightly longer than the PROCESS call.
 =cut
 
 use base qw( Template::Context );
-use Time::HiRes (); # Save as much space as we can
+use Time::HiRes ();
+
+our $depth = 0;
+our $epoch = undef;
+our @totals;
 
 foreach my $sub ( qw( process include ) ) {
     no strict;
     my $super = __PACKAGE__->can("SUPER::$sub") or die;
-    *$sub = sub {
-        my $self     = shift;
-        my $template = ref $_[0] eq 'ARRAY'
-                            ? join( ' + ', @{$_[0]} )
-                            : ref $_[0] ? $_[0]->name : $_[0];
-        my $start    = [Time::HiRes::gettimeofday];
-        my $data     = $super->($self, @_);
-        my $elapsed  = Time::HiRes::tv_interval($start);
-        return <<"END"
-<!-- TIMER START: $sub $template -->
-$data
-<!-- TIMER END: $sub $template ($elapsed seconds) -->
-END
+    *{$sub} = sub {
+        my $self = shift;
+        my $what = shift;
+
+        my $template =
+            ref($what) eq 'ARRAY'
+                ? join( ' + ', @{$what} )
+                : ref($what)
+                    ? $what->name
+                    : $what;
+
+        my $level;
+        my $processed_data;
+        my $epoch_elapsed_start;
+        my $epoch_elapsed_end;
+        my $now   = [Time::HiRes::gettimeofday];
+        my $start = [@{$now}];
+        DOIT: {
+            local $epoch = $epoch ? $epoch : [@{$now}];
+            local $depth = $depth + 1;
+            $level = $depth;
+            $epoch_elapsed_start = _diff_disp($epoch);
+            $processed_data = $super->($self, $what, @_);
+            $epoch_elapsed_end = _diff_disp($epoch);
+        }
+        my $spacing = ' ' x $level;
+        my $level_elapsed = _diff_disp($start);
+        my $ip = uc substr( $sub, 0, 1 );
+        my $start_stats = "L$level $epoch_elapsed_start         $spacing$ip $template";
+        my $end_stats =   "L$level $epoch_elapsed_end $level_elapsed $spacing$ip $template";
+        @totals = ( $start_stats, @totals, $end_stats );
+        if ( $level > 1 ) {
+            return $processed_data;
+        }
+
+        my $summary = join( "\n",
+            '<!-- SUMMARY',
+            @totals,
+            '-->',
+            '',
+        );
+        @totals = ();
+        return "$processed_data\n$summary\n";
     }; # sub
 } # for
+
+
+sub _diff_disp {
+    my $starting_point = shift;
+
+    return sprintf( '%7.3f', Time::HiRes::tv_interval($starting_point) * 1000 );
+}
 
 
 =head1 AUTHOR
@@ -98,7 +139,7 @@ and to Gavin Estey for the original code.
 
 =head1 COPYRIGHT & LICENSE
 
-Copyright 2005 Andy Lester, All Rights Reserved.
+Copyright 2005-2007 Andy Lester, All Rights Reserved.
 
 This program is free software; you can redistribute it and/or modify it
 under the same terms as Perl itself.
