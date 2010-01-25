@@ -1,0 +1,23 @@
+Revision history for Template::Timer
+
+0.04    Sun Oct 16 22:56:51 CDT 2005
+
+        [FIXES]
+        When calling
+
+            [% PROCESS block_1 + block_2 %]
+
+        the block names are passed as an array reference to process().
+        Template::Timer was assuming that any ref() passed was an object
+        and calling ->name on that object.  Thanks to Bill Moseley.
+
+
+0.02    Tue Oct 26 11:08:33 CDT 2004
+
+        * First actual working version.  Fixed bonheaded typo.
+
+
+0.01    Tue Oct 26 09:58:24 CDT 2004
+
+        * First rudimentary version.  Patches and comments welcome.
+
