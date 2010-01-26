@@ -46,7 +46,7 @@ BUGS
 
 ACKNOWLEDGEMENTS
     Thanks to Andy Lester, Randal Schwartz, Bill Moseley, and to Gavin Estey
-    for the original code.
+    for the original Template::Timer code that this is based on.
 
 COPYRIGHT & LICENSE
     This library is free software; you can redistribute it and/or modify it

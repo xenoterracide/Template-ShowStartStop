@@ -97,7 +97,7 @@ Thanks to
 Andy Lester,
 Randal Schwartz,
 Bill Moseley,
-and to Gavin Estey for the original code.
+and to Gavin Estey for the original Template::Timer code that this is based on.
 
 =head1 COPYRIGHT & LICENSE
 
