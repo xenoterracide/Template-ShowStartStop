@@ -10,12 +10,12 @@ BEGIN {
 }
 
 BEGIN {
-    use_ok( 'Template::Timer' );
+    use_ok( 'Template::ShowStartStop' );
 }
 
 my $tt =
     Template->new( {
-        CONTEXT => Template::Timer->new
+        CONTEXT => Template::ShowStartStop->new
     } );
 
 my $block = q{[% thing = 'doohickey' %]};

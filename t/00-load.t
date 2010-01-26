@@ -6,7 +6,7 @@ use warnings;
 use Test::More tests => 1;
 
 BEGIN {
-    use_ok( 'Template::Timer' );
+    use_ok( 'Template::ShowStartStop' );
 }
 
-diag( "Testing Template::Timer $Template::Timer::VERSION" );
+diag( "Testing Template::ShowStartStop $Template::ShowStartStop::VERSION" );
