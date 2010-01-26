@@ -80,11 +80,15 @@ foreach my $sub ( qw( process include ) ) {
 
 		my $processed_data = $super->($self, $what, @_);
 
-		return << "END"
-<!-- START: $sub $template -->
+		unless ($sub eq  "process") {
+			return <<END
+<!-- START: $sub $template -->\n 
 $processed_data
-<!--  STOP: $sub $template -->
+<!--  STOP: $sub $template -->\n
 END
+		} else {
+			return $processed_data;
+		}
 	}; # sub
 } # for
 
