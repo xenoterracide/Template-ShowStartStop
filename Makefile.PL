@@ -3,10 +3,10 @@ use warnings;
 use ExtUtils::MakeMaker;
 
 my %parms = (
-    NAME                => 'Template::Timer',
-    AUTHOR              => 'Andy Lester <andy@petdance.com>',
-    VERSION_FROM        => 'Timer.pm',
-    ABSTRACT_FROM       => 'Timer.pm',
+    NAME                => 'Template::ShowStartStop',
+    AUTHOR              => 'Caleb Cushing <xenoterracide@gmail.com>',
+    VERSION_FROM        => 'ShowStartStop.pm',
+    ABSTRACT_FROM       => 'ShowStartStop.pm',
     PL_FILES            => {},
     PREREQ_PM => {
         'Template'      => 0,
@@ -14,14 +14,14 @@ my %parms = (
         'Time::HiRes'   => 0,
     },
     dist                => { COMPRESS => 'gzip -9f', SUFFIX => 'gz', },
-    clean               => { FILES => 'Template-Timer-*' },
+    clean               => { FILES => 'Template-ShowStartStop-*' },
 );
 
 if ( $ExtUtils::MakeMaker::VERSION ge '6.36' ) {
     $parms{EXTRA_META} = <<EOF;
 resources:
     license: http://dev.perl.org/licenses/
-    Repository: http://github.com/petdance/template-timer/
+    Repository: http://github.com/xenoterracide/template-showstartstop/
 EOF
 }
 
@@ -40,7 +40,7 @@ tags:
 		--languages=Perl --langmap=Perl:+.t \
 
 critic:
-	perlcritic -1 -q -profile perlcriticrc Timer.pm t/*.t
+	perlcritic -1 -q -profile perlcriticrc ShowStartStop.pm t/*.t
 
 MAKE_FRAG
 

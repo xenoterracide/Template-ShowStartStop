@@ -1,9 +1,9 @@
 Changes
-MANIFEST
-META.yml # Will be created by "make dist"
 Makefile.PL
+MANIFEST
+META.yml			# Will be created by "make dist"
 README
-Timer.pm
+ShowStartStop.pm
 t/00-load.t
 t/eval.t
 t/pod.t
