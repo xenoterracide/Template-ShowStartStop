@@ -1,5 +1,9 @@
 Revision history for Template::Locator
 
+0.02  Jan 26 2010
+====================================
+Show process only comments to remove redunancy
+
 0.01  Jan 25 2010
 ====================================
 First rudimentary version.  Patches and comments welcome.

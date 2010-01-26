@@ -17,9 +17,9 @@ our $VERSION = '0.01';
 
 =head1 SYNOPSIS
 
-Template::ShowStartStop provides inline timings of the template processing
-througout your code.  It's an overridden version of L<Template::Context>
-that wraps the C<process()> and C<include()> methods.
+Template::ShowStartStop provides inline comments througout your code where
+each template stops and starts.  It's an overridden version of L<Template::Context>
+that wraps the C<process()> method.
 
 Using Template::ShowStartStop is simple.
 
@@ -40,26 +40,18 @@ Using Template::ShowStartStop is simple.
 Now when you process templates, HTML comments will get embedded in your
 output, which you can easily grep for.  The nesting level is also shown.
 
-	<!-- START: process mainmenu/mainmenu.ttml -->
 	<!-- START: include mainmenu/cssindex.tt -->
-	<!-- START: process mainmenu/cssindex.tt -->
-	<!-- STOP:   process mainmenu/cssindex.tt -->
-	<!-- STOP:   include mainmenu/cssindex.tt -->
+	<!-- STOP:  include mainmenu/cssindex.tt -->
 
 	....
 
-	<!-- STOP:   process mainmenu/footer.tt -->
-	<!-- STOP:   include mainmenu/footer.tt -->
-	<!-- STOP:   process mainmenu/mainmenu.ttml -->
-
-Note that since INCLUDE is a wrapper around PROCESS, calls to INCLUDEs
-will be doubled up, and slightly longer than the PROCESS call.
+	<!-- STOP:  include mainmenu/footer.tt -->
 
 =cut
 
 use base qw( Template::Context );
 
-foreach my $sub ( qw( process include ) ) {
+foreach my $sub ( qw( process ) ) {
 	no strict;
 
 	my $super = __PACKAGE__->can("SUPER::$sub") or die;
@@ -80,15 +72,10 @@ foreach my $sub ( qw( process include ) ) {
 
 		my $processed_data = $super->($self, $what, @_);
 
-		unless ($sub eq  "process") {
-			return <<END
-<!-- START: $sub $template -->\n 
-$processed_data
-<!--  STOP: $sub $template -->\n
+		return <<END
+<!-- START: $sub $template -->
+$processed_data<!-- STOP:  $sub $template -->
 END
-		} else {
-			return $processed_data;
-		}
 	}; # sub
 } # for
 
