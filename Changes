@@ -1,5 +1,9 @@
 Revision history for Template::ShowStartStop
 
+0.04  Mar  1 2010
+====================================
+change from heredoc. I think it's sloppy
+
 0.03  Feb 15 2010
 ====================================
 Clean up files for wrong comments
