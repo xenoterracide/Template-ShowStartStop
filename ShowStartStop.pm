@@ -74,7 +74,8 @@ foreach my $sub ( qw( process ) ) {
 
 		my $output
 			= "<!-- START: $sub $template -->\n"
-			. "$processed_data<!-- STOP:  $sub $template -->\n"
+			. "$processed_data"
+			. "<!-- STOP:  $sub $template -->\n"
 			;
 
 		return $output;
