@@ -57,8 +57,7 @@ foreach my $sub ( qw( process ) ) {
 	my $super = __PACKAGE__->can("SUPER::$sub") or die;
 
 	*{$sub} = sub {
-		my $self = shift;
-		my $what = shift;
+		my ( $self, $what ) = @_;
 
 		my $template;
 
