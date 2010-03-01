@@ -73,8 +73,8 @@ foreach my $sub ( qw( process ) ) {
 		my $processed_data = $super->($self, $what, @_);
 
 		my $output
-			= "<!-- START: $sub $template -->"
-			. "$processed_data<!-- STOP:  $sub $template -->"
+			= "<!-- START: $sub $template -->\n"
+			. "$processed_data<!-- STOP:  $sub $template -->\n"
 			;
 
 		return $output;
