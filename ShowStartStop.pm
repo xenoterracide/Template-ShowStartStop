@@ -49,7 +49,7 @@ output, which you can easily grep for.  The nesting level is also shown.
 
 =cut
 
-use base qw( Template::Context );
+use parent qw( Template::Context );
 
 foreach my $sub ( qw( process ) ) {
 	no strict;
