@@ -79,9 +79,8 @@ foreach my $sub ( qw( process ) ) {
 			;
 
 		return $output;
-	}; # sub
-} # for
-
+	};
+}
 
 =head1 AUTHOR
 
