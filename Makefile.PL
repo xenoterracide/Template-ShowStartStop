@@ -9,6 +9,7 @@ my %parms = (
     ABSTRACT_FROM       => 'ShowStartStop.pm',
     PL_FILES            => {},
     PREREQ_PM => {
+		'parent'		=> 0,
         'Template'      => 0,
         'Test::More'    => 0,
         'Time::HiRes'   => 0,
