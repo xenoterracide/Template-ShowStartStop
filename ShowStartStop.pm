@@ -52,7 +52,7 @@ output, which you can easily grep for.  The nesting level is also shown.
 use base qw( Template::Context );
 
 foreach my $sub ( qw( process ) ) {
-	no strict;
+#	no strict;
 
 	my $super = __PACKAGE__->can("SUPER::$sub") or die;
 
