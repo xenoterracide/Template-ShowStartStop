@@ -60,15 +60,12 @@ foreach my $sub ( qw( process ) ) {
 		my $self = shift;
 		my $what = shift;
 
-		my $template;
-
-		if ( ref($what) eq 'ARRAY' ) {
-			$template = join( ' + ', @{$what} );
-		} elsif ( ref($what) ) {
-			$template = $what->name;
-		} else {
-			$template = $what;
-		}
+		my $template
+			# conditional           # set $template to
+			= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
+			: ref($what)            ? $what->name
+			:                         $what
+			;
 
 		my $processed_data = $super->($self, $what, @_);
 
