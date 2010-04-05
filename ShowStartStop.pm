@@ -88,7 +88,7 @@ Caleb Cushing, C<< <xenoterracide@gmail.com> >>
 
 Please report any bugs or feature requests on 
 L<http://github.com/xenoterracide/Template-ShowStartStop/issues>
-as I'm not found of RT.
+as I'm not fond of RT.
 
 =head1 ACKNOWLEDGEMENTS
 
