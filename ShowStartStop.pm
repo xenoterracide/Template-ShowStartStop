@@ -15,6 +15,39 @@ Version 0.04
 
 our $VERSION = '0.04';
 
+use parent qw( Template::Context );
+
+foreach my $sub ( qw( process ) ) {
+	no strict 'refs';
+
+	my $super = __PACKAGE__->can("SUPER::$sub") or die;
+
+	*{$sub} = sub {
+		my $self = shift;
+		my $what = shift;
+
+		my $template
+			# conditional           # set $template to
+			= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
+			: ref($what)            ? $what->name
+			:                         $what
+			;
+
+		my $processed_data = $super->($self, $what, @_);
+
+		my $output
+			= "<!-- START: $sub $template -->\n"
+			. "$processed_data"
+			. "<!-- STOP:  $sub $template -->\n"
+			;
+
+		return $output;
+	};
+}
+
+1;
+__END__
+
 =head1 SYNOPSIS
 
 Template::ShowStartStop provides inline comments througout your code where
@@ -47,38 +80,6 @@ output, which you can easily grep for.  The nesting level is also shown.
 
 	<!-- STOP:  include mainmenu/footer.tt -->
 
-=cut
-
-use parent qw( Template::Context );
-
-foreach my $sub ( qw( process ) ) {
-	no strict 'refs';
-
-	my $super = __PACKAGE__->can("SUPER::$sub") or die;
-
-	*{$sub} = sub {
-		my $self = shift;
-		my $what = shift;
-
-		my $template
-			# conditional           # set $template to
-			= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
-			: ref($what)            ? $what->name
-			:                         $what
-			;
-
-		my $processed_data = $super->($self, $what, @_);
-
-		my $output
-			= "<!-- START: $sub $template -->\n"
-			. "$processed_data"
-			. "<!-- STOP:  $sub $template -->\n"
-			;
-
-		return $output;
-	};
-}
-
 =head1 AUTHOR
 
 Caleb Cushing, C<< <xenoterracide@gmail.com> >>
@@ -108,10 +109,6 @@ License 2.0.
 	* http://www.opensource.org/licenses/artistic-license-2.0.php
 
 =cut
-
-1; # End of Template::ShowStartStop
-
-__END__
 # notes from an IRC conversation on how to improve this module
 [Tuesday 02 March 2010] [04:26:51 pm] <tm604>   xenoterracide: you can get rid
 of foreach, since you only wrap one method, also drop my $super = ...;, remove
