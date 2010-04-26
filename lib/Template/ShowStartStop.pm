@@ -7,13 +7,7 @@ use strict;
 
 Template::ShowStartStop - Display where template's start and stop
 
-=head1 VERSION
-
-Version 0.05
-
 =cut
-
-our $VERSION = '0.05';
 
 use parent qw( Template::Context );
 
