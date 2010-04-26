@@ -17,33 +17,33 @@ our $VERSION = '0.04';
 
 use parent qw( Template::Context );
 
-foreach my $sub ( qw( process ) ) {
-	no strict 'refs';
+my $sub = qw(process);
 
-	my $super = __PACKAGE__->can("SUPER::$sub") or die;
+my $super = __PACKAGE__->can("SUPER::$sub") or die;
 
-	*{$sub} = sub {
-		my $self = shift;
-		my $what = shift;
+my $wrapped = sub {
+	my $self = shift;
+	my $what = shift;
 
-		my $template
-			# conditional           # set $template to
-			= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
-			: ref($what)            ? $what->name
-			:                         $what
-			;
+	my $template
+		# conditional           # set $template to
+		= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
+		: ref($what)            ? $what->name
+		:                         $what
+		;
 
-		my $processed_data = $super->($self, $what, @_);
+	my $processed_data = $super->($self, $what, @_);
 
-		my $output
-			= "<!-- START: $sub $template -->\n"
-			. "$processed_data"
-			. "<!-- STOP:  $sub $template -->\n"
-			;
+	my $output
+		= "<!-- START: $sub $template -->\n"
+		. "$processed_data"
+		. "<!-- STOP:  $sub $template -->\n"
+		;
 
-		return $output;
-	};
-}
+	return $output;
+};
+
+{ no strict 'refs'; *{$sub} = $wrapped; }
 
 1;
 __END__
