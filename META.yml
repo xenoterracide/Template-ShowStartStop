@@ -1,0 +1,24 @@
+---
+abstract: "Display where template's start and stop"
+author:
+  - 'Caleb Cushing <xenoterracide@gmail.com>'
+build_requires:
+  Carp: 0
+  Scalar::Util: 0
+  Test::More: 0.88
+  perl: 5.004
+configure_requires:
+  ExtUtils::MakeMaker: 6.31
+generated_by: 'Dist::Zilla version 2.101160'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Template-ShowStartStop
+recommends: {}
+requires:
+  Template::Context: 0
+  parent: 0
+resources:
+  repository: http://github.com/xenoterracide/Template-ShowStartStop
+version: 0.06
