@@ -1,5 +1,8 @@
 Revision history for Template::ShowStartStop
-0.06      2010-04-28 01:41:46 America/Detroit
+0.06      Apr 28 2010
+====================================
+Migrate completely to Dist::Zilla
+
 0.05  Apr 26 2010
 ====================================
 change back to ternary.
