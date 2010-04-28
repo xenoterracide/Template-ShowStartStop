@@ -4,6 +4,8 @@ author:
   - 'Caleb Cushing <xenoterracide@gmail.com>'
 build_requires:
   Carp: 0
+  File::Find: 0
+  File::Temp: 0
   Scalar::Util: 0
   Test::More: 0.88
   perl: 5.004

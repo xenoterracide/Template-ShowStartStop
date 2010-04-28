@@ -19,9 +19,11 @@ my %WriteMakefileArgs = (
                                                },
                        'AUTHOR' => 'Caleb Cushing <xenoterracide@gmail.com>',
                        'BUILD_REQUIRES' => {
+                                             'perl' => '5.004',
                                              'Test::More' => '0.88',
                                              'Scalar::Util' => '0',
-                                             'perl' => '5.004',
+                                             'File::Find' => '0',
+                                             'File::Temp' => '0',
                                              'Carp' => '0'
                                            },
                        'ABSTRACT' => 'Display where template\'s start and stop',
