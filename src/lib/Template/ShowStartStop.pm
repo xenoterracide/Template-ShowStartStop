@@ -36,12 +36,6 @@ __END__
 # ABSTRACT: Display where template's start and stop
 =head1 SYNOPSIS
 
-Template::ShowStartStop provides inline comments througout your code where
-each template stops and starts.  It's an overridden version of L<Template::Context>
-that wraps the C<process()> method.
-
-Using Template::ShowStartStop is simple.
-
 	use Template::ShowStartStop;
 
 	my %config = ( # Whatever your config is
@@ -50,12 +44,17 @@ Using Template::ShowStartStop is simple.
 		COMPILE_DIR	 => '/tmp/tt',
 	);
 
-	if ( $development_mode ) {
-		$config{ CONTEXT } = Template::ShowStartStop->new( %config );
-	}
+	$config{ CONTEXT } = Template::ShowStartStop->new( %config );
 
 	my $template = Template->new( \%config );
 
+=head1 DESCRIPTION
+
+Template::ShowStartStop provides inline comments througout your code where
+each template stops and starts.  It's an overridden version of L<Template::Context>
+that wraps the C<process()> method.
+
+Using Template::ShowStartStop is simple.
 Now when you process templates, HTML comments will get embedded in your
 output, which you can easily grep for.  The nesting level is also shown.
 
