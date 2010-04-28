@@ -1,13 +1,53 @@
+NAME
+    Template::ShowStartStop - Display where template's start and stop
 
+VERSION
+    version 0.06
 
-This archive contains the distribution Template-ShowStartStop,
-version 0.06:
+SYNOPSIS
+            use Template::ShowStartStop;
 
-  Display where template's start and stop
+            my %config = ( # Whatever your config is
+                    INCLUDE_PATH    => '/my/template/path',
+                    COMPILE_EXT      => '.ttc',
+                    COMPILE_DIR      => '/tmp/tt',
+            );
 
-This software is copyright (c) 2010 by Caleb Cushing.
+            $config{ CONTEXT } = Template::ShowStartStop->new( %config );
 
-This is free software; you can redistribute it and/or modify it under
-the same terms as the Perl 5 programming language system itself.
+            my $template = Template->new( \%config );
 
+DESCRIPTION
+    Template::ShowStartStop provides inline comments througout your code
+    where each template stops and starts. It's an overridden version of
+    Template::Context that wraps the "process()" method.
+
+    Using Template::ShowStartStop is simple. Now when you process templates,
+    HTML comments will get embedded in your output, which you can easily
+    grep for. The nesting level is also shown.
+
+            <!-- START: include mainmenu/cssindex.tt -->
+            <!-- STOP:  include mainmenu/cssindex.tt -->
+
+            ....
+
+            <!-- STOP:  include mainmenu/footer.tt -->
+
+BUGS
+    Please report any bugs or feature requests on
+    <http://github.com/xenoterracide/Template-ShowStartStop/issues> as I'm
+    not fond of RT.
+
+ACKNOWLEDGEMENTS
+    Thanks to Andy Lester, Randal Schwartz, Bill Moseley, and to Gavin Estey
+    for the original Template::Timer code that this is based on.
+
+AUTHOR
+      Caleb Cushing <xenoterracide@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is copyright (c) 2010 by Caleb Cushing.
+
+    This is free software; you can redistribute it and/or modify it under
+    the same terms as the Perl 5 programming language system itself.
 
