@@ -71,12 +71,12 @@ Using Template::ShowStartStop is simple.
 Now when you process templates, HTML comments will get embedded in your
 output, which you can easily grep for.  The nesting level is also shown.
 
-	<!-- START: include mainmenu/cssindex.tt -->
-	<!-- STOP:  include mainmenu/cssindex.tt -->
+	<!-- START: process mainmenu/cssindex.tt -->
+	<!-- STOP:  process mainmenu/cssindex.tt -->
 
 	....
 
-	<!-- STOP:  include mainmenu/footer.tt -->
+	<!-- STOP:  process mainmenu/footer.tt -->
 
 =head1 BUGS
 
