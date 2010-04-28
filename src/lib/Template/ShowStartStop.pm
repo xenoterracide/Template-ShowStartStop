@@ -1,10 +1,4 @@
 package Template::ShowStartStop;
-=head1 NAME
-
-Template::ShowStartStop - Display where template's start and stop
-
-=cut
-
 use strict;
 use warnings;
 use parent qw( Template::Context );
@@ -39,7 +33,7 @@ my $wrapped = sub {
 
 1;
 __END__
-
+# ABSTRACT: Display where template's start and stop
 =head1 SYNOPSIS
 
 Template::ShowStartStop provides inline comments througout your code where
@@ -72,10 +66,6 @@ output, which you can easily grep for.  The nesting level is also shown.
 
 	<!-- STOP:  include mainmenu/footer.tt -->
 
-=head1 AUTHOR
-
-Caleb Cushing, C<< <xenoterracide@gmail.com> >>
-
 =head1 BUGS
 
 Please report any bugs or feature requests on 
@@ -90,17 +80,8 @@ Randal Schwartz,
 Bill Moseley,
 and to Gavin Estey for the original Template::Timer code that this is based on.
 
-=head1 COPYRIGHT & LICENSE
-
-This library is free software; you can redistribute it and/or modify
-it under the terms of either the GNU Public License v3, or the Artistic
-License 2.0.
-
-	* http://www.gnu.org/copyleft/gpl.html
-
-	* http://www.opensource.org/licenses/artistic-license-2.0.php
-
 =cut
+
 # notes from an IRC conversation on how to improve this module
 [Tuesday 02 March 2010] [04:26:51 pm] <tm604>   xenoterracide: you can get rid
 of foreach, since you only wrap one method, also drop my $super = ...;, remove
