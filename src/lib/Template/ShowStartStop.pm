@@ -1,14 +1,12 @@
 package Template::ShowStartStop;
-
-use warnings;
-use strict;
-
 =head1 NAME
 
 Template::ShowStartStop - Display where template's start and stop
 
 =cut
 
+use strict;
+use warnings;
 use parent qw( Template::Context );
 
 my $sub = qw(process);
