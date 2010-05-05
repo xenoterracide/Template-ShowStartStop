@@ -8,6 +8,7 @@ lib/Template/ShowStartStop.pm
 t/00-compile.t
 t/000-report-versions.t
 t/eval.t
+t/release-minimum-version.t
 t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/release-synopsis.t
