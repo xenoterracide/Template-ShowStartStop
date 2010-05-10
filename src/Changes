@@ -1,6 +1,10 @@
 Revision history for Template::ShowStartStop
 {{$NEXT}}
 ====================================
+Fix Licensing Issues
+
+0.06      May 10 2010
+====================================
 Migrate completely to Dist::Zilla
 
 0.05  Apr 26 2010

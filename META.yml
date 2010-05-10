@@ -11,8 +11,8 @@ build_requires:
   perl: 5.004
 configure_requires:
   ExtUtils::MakeMaker: 6.31
-generated_by: 'Dist::Zilla version 2.101170'
-license: perl
+generated_by: 'Dist::Zilla version 2.101241'
+license: gpl3artistic2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -23,4 +23,4 @@ requires:
   parent: 0
 resources:
   repository: http://github.com/xenoterracide/Template-ShowStartStop
-version: 0.06
+version: 0.07

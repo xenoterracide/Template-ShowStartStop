@@ -2,7 +2,7 @@ NAME
     Template::ShowStartStop - Display where template's start and stop
 
 VERSION
-    version 0.06
+    version 0.07
 
 SYNOPSIS
             use Template::ShowStartStop;
@@ -49,5 +49,9 @@ COPYRIGHT AND LICENSE
     This software is copyright (c) 2010 by Caleb Cushing.
 
     This is free software; you can redistribute it and/or modify it under
-    the same terms as the Perl 5 programming language system itself.
+    one of the following licenses
+
+    a) the GNU General Public License as published by the Free Software
+    Foundation; either version 3, or (at your option) any later version, or
+    b) the "Artistic License 2.0"
 
