@@ -9,32 +9,32 @@ use ExtUtils::MakeMaker 6.31;
 
 
 my %WriteMakefileArgs = (
-                       'test' => {
-                                   'TESTS' => 't/*.t'
-                                 },
-                       'NAME' => 'Template::ShowStartStop',
-                       'DISTNAME' => 'Template-ShowStartStop',
-                       'CONFIGURE_REQUIRES' => {
-                                                 'ExtUtils::MakeMaker' => '6.31'
-                                               },
-                       'AUTHOR' => 'Caleb Cushing <xenoterracide@gmail.com>',
-                       'BUILD_REQUIRES' => {
-                                             'perl' => '5.004',
-                                             'Test::More' => '0.88',
-                                             'Scalar::Util' => '0',
-                                             'File::Find' => '0',
-                                             'File::Temp' => '0',
-                                             'Carp' => '0'
-                                           },
-                       'ABSTRACT' => 'Display where template\'s start and stop',
-                       'EXE_FILES' => [],
-                       'VERSION' => '0.06',
-                       'PREREQ_PM' => {
-                                        'parent' => '0',
-                                        'Template::Context' => '0'
-                                      },
-                       'LICENSE' => 'perl'
-                     );
+  'ABSTRACT' => 'Display where template\'s start and stop',
+  'AUTHOR' => 'Caleb Cushing <xenoterracide@gmail.com>',
+  'BUILD_REQUIRES' => {
+    'Carp' => '0',
+    'File::Find' => '0',
+    'File::Temp' => '0',
+    'Scalar::Util' => '0',
+    'Test::More' => '0.88',
+    'perl' => '5.004'
+  },
+  'CONFIGURE_REQUIRES' => {
+    'ExtUtils::MakeMaker' => '6.31'
+  },
+  'DISTNAME' => 'Template-ShowStartStop',
+  'EXE_FILES' => [],
+  'LICENSE' => 'gpl3artistic2',
+  'NAME' => 'Template::ShowStartStop',
+  'PREREQ_PM' => {
+    'Template::Context' => '0',
+    'parent' => '0'
+  },
+  'VERSION' => '0.07',
+  'test' => {
+    'TESTS' => 't/*.t'
+  }
+);
 
 
 unless ( eval { ExtUtils::MakeMaker->VERSION(6.56) } ) {
