@@ -12,9 +12,9 @@ my $super = __PACKAGE__->can("SUPER::$sub") or die;
 
 my $wrapped = sub {
 	my $self = shift;
-	my $what = shift;
+	my $what = shift; # what template are we working with
 
-	my $template
+	my $template # get the template filename
 		# conditional           # set $template to
 		= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
 		: ref($what)            ? $what->name

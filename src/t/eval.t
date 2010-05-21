@@ -1,17 +1,12 @@
-#!perl -Tw
+#!perl -T
 
 use strict;
 use warnings;
 
 use Test::More tests => 3;
 
-BEGIN {
-    use_ok( 'Template' );
-}
-
-BEGIN {
-    use_ok( 'Template::ShowStartStop' );
-}
+BEGIN { use_ok( 'Template' ); }
+BEGIN { use_ok( 'Template::ShowStartStop' ); }
 
 my $tt =
     Template->new( {
