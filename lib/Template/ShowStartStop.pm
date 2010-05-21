@@ -51,15 +51,9 @@ version 0.07
 
 	use Template::ShowStartStop;
 
-	my %config = ( # Whatever your config is
-		INCLUDE_PATH	=> '/my/template/path',
-		COMPILE_EXT	 => '.ttc',
-		COMPILE_DIR	 => '/tmp/tt',
-	);
-
-	$config{ CONTEXT } = Template::ShowStartStop->new( %config );
-
-	my $template = Template->new( \%config );
+	my $tt = Template->new({
+		CONTEXT => Template::ShowStartStop->new
+	});
 
 =head1 DESCRIPTION
 
