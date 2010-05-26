@@ -4,6 +4,7 @@ Revision history for Template::ShowStartStop
 * Change License to Artistic 2.0 because dual license isn't required
 * add basic functionality test
 * simplify documentation
+* add SubmittingPatches documentation
 
 0.07      May 10 2010
 ====================================
