@@ -1,6 +1,12 @@
 Revision history for Template::ShowStartStop
 {{$NEXT}}
 ====================================
+* Change License to Artistic 2.0 because dual license isn't required
+* add basic functionality test
+* simplify documentation
+
+0.07      May 10 2010
+====================================
 Fix Licensing Issues
 
 0.06      May 10 2010

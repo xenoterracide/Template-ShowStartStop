@@ -13,7 +13,7 @@ configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
 generated_by: 'Dist::Zilla version 3.101450, CPAN::Meta::Converter version 2.101450'
-license: unknown
+license: artistic2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
@@ -23,4 +23,4 @@ requires:
   parent: 0
 resources:
   repository: http://github.com/xenoterracide/Template-ShowStartStop
-version: 0.07
+version: 0.08

@@ -24,13 +24,13 @@ my %WriteMakefileArgs = (
   },
   'DISTNAME' => 'Template-ShowStartStop',
   'EXE_FILES' => [],
-  'LICENSE' => 'gpl3artistic2',
+  'LICENSE' => 'artistic_2',
   'NAME' => 'Template::ShowStartStop',
   'PREREQ_PM' => {
     'Template::Context' => '0',
     'parent' => '0'
   },
-  'VERSION' => '0.07',
+  'VERSION' => '0.08',
   'test' => {
     'TESTS' => 't/*.t'
   }
