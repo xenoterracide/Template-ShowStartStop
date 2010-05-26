@@ -13,13 +13,14 @@ Checklist (and a short version for the impatient):
 		  not "changed" or "changes".
 		- includes motivation for the change, and contrasts
 		  its implementation with previous behaviour
-	- if you want your work included in git.git, add a
+	- if you want your work included in the main repository, add a
 	  "Signed-off-by: Your Name <you@example.com>" line to the
 	  commit message (or just use the option "-s" when
 	  committing) to confirm that you agree to the Developer's
 	  Certificate of Origin
 	- make sure that you have tests for the bug you are fixing
 	- make sure that the test suite passes after your commit
+	- make sure that you provide documentation for any features
 
 	Patch:
 
@@ -37,11 +38,6 @@ Checklist (and a short version for the impatient):
 	  documentation should be updated as well.
 	- if your name is not writable in ASCII, make sure that
 	  you send off a message in the correct encoding.
-	- send the patch to the list (git@vger.kernel.org) and the
-	  maintainer (gitster@pobox.com) if (and only if) the patch
-	  is ready for inclusion. If you use git-send-email(1),
-	  please test it first by sending email to yourself.
-	- see below for instructions specific to your mailer
 
 Long version:
 
@@ -142,14 +138,13 @@ that is fine, but please mark it as such.
 
 (3) Sending your patches.
 
-People on the git mailing list need to be able to read and
-comment on the changes you are submitting.  It is important for
-a developer to be able to "quote" your changes, using standard
-e-mail tools, so that they may comment on specific portions of
-your code.  For this reason, all patches should be submitted
-"inline".  WARNING: Be wary of your MUAs word-wrap
-corrupting your patch.  Do not cut-n-paste your patch; you can
-lose tabs that way if you are not careful.
+People need to be able to read and comment on the changes you are
+submitting.  It is important for a developer to be able to "quote"
+your changes, using standard e-mail tools, so that they may comment
+on specific portions of your code.  For this reason, all patches
+should be submitted "inline".  WARNING: Be wary of your MUAs word-wrap
+corrupting your patch.  Do not cut-n-paste your patch; you can lose
+tabs that way if you are not careful.
 
 It is a common convention to prefix your subject line with
 [PATCH].  This lets people easily distinguish patches from other
@@ -280,7 +275,7 @@ suggests to the contributors:
 
  (0) You come up with an itch.  You code it up.
 
- (1) Send it to the list and cc people who may need to know about
+ (1) Send it to the bug tracker and cc people who may need to know about
      the change.
 
      The people who may need to know are the ones whose code you
@@ -316,10 +311,6 @@ Know the status of your patch after submission
   of the branch in which your patch has been merged (i.e. it will not
   tell you if your patch is merged in pu if you rebase on top of
   master).
-
-* Read the git mailing list, the maintainer regularly posts messages
-  entitled "What's cooking in git.git" and "What's in git.git" giving
-  the status of various proposed changes.
 
 ------------------------------------------------
 MUA specific hints
