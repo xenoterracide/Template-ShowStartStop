@@ -1,7 +1,4 @@
 package Template::ShowStartStop;
-BEGIN {
-  $Template::ShowStartStop::VERSION = '0.08';
-}
 use strict;
 use warnings;
 use parent qw( Template::Context );
@@ -35,18 +32,8 @@ my $wrapped = sub {
 { no strict 'refs'; *{$sub} = $wrapped; }
 
 1;
-
-
-=pod
-
-=head1 NAME
-
-Template::ShowStartStop - Display where template's start and stop
-
-=head1 VERSION
-
-version 0.08
-
+__END__
+# ABSTRACT: Display where template's start and stop
 =head1 SYNOPSIS
 
 	use Template::ShowStartStop;
@@ -86,23 +73,7 @@ Randal Schwartz,
 Bill Moseley,
 and to Gavin Estey for the original Template::Timer code that this is based on.
 
-=head1 AUTHOR
-
-  Caleb Cushing <xenoterracide@gmail.com>
-
-=head1 COPYRIGHT AND LICENSE
-
-This software is Copyright (c) 2010 by Caleb Cushing.
-
-This is free software, licensed under:
-
-  The Artistic License 2.0
-
 =cut
-
-
-__END__
-# ABSTRACT: Display where template's start and stop
 
 # notes from an IRC conversation on how to improve this module
 [Tuesday 02 March 2010] [04:26:51 pm] <tm604>   xenoterracide: you can get rid
