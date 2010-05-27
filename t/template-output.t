@@ -4,11 +4,11 @@ use warnings;
 use Template::ShowStartStop;
 use Template::Test;
 
+$Template::Test::DEBUG = 1;
+
 my $tt = Template->new({
 	CONTEXT => Template::ShowStartStop->new
 });
-
-$tt::Test::DEBUG = 1;
 
 my $vars = {
 	var => 'world',
