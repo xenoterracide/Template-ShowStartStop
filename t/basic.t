@@ -15,18 +15,12 @@ my $vars = {
 	var => 'world',
 };
 
-my $final_output = <<END;
+test_expect(\*DATA, $tt, $vars);
+
+__DATA__
+--test--
+hello [% var %]
+--expect--
 <!-- START: process input file handle -->
 hello world
 <!-- STOP:  process input file handle -->
-END
-
-my $output = \do{ my $i }; #use anonymous scalar
-
-ok( $tt->process(\*DATA, $vars, $output), 'process template');
-
-is( $$output, $final_output, 'test hello world output');
-
-done_testing();
-__DATA__
-hello [% var %]
