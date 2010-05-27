@@ -7,9 +7,7 @@ BEGIN {
 }
 use parent qw( Template::Context );
 
-my $sub = qw(process);
-
-my $super = __PACKAGE__->can("SUPER::$sub") or die;
+my $super = __PACKAGE__->can("SUPER::process") or die;
 
 my $wrapped = sub {
 	my $self = shift;
@@ -24,18 +22,16 @@ my $wrapped = sub {
 
 	my $processed_data = $super->($self, $what, @_);
 
-	my ( $package, $filename, $line ) = caller;
-
 	my $output
-		= "<!-- START: $sub $line $template -->\n"
+		= "<!-- START: process $template -->\n"
 		. "$processed_data"
-		. "<!-- STOP:  $sub $line $template -->\n"
+		. "<!-- STOP:  process $template -->\n"
 		;
 
 	return $output;
 };
 
-{ no strict 'refs'; *{$sub} = $wrapped; }
+{ *{process} = $wrapped; }
 
 1;
 
