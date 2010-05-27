@@ -5,6 +5,7 @@ Revision history for Template::ShowStartStop
 * add basic functionality test
 * simplify documentation
 * add SubmittingPatches documentation
+* add MetaTests
 
 0.07      May 10 2010
 ====================================
