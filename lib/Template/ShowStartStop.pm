@@ -24,10 +24,12 @@ my $wrapped = sub {
 
 	my $processed_data = $super->($self, $what, @_);
 
+	( $package, $filename, $line ) = caller;
+
 	my $output
-		= "<!-- START: $sub $template -->\n"
+		= "<!-- START: $sub $line $template -->\n"
 		. "$processed_data"
-		. "<!-- STOP:  $sub $template -->\n"
+		. "<!-- STOP:  $sub $line $template -->\n"
 		;
 
 	return $output;
