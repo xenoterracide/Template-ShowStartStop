@@ -4,9 +4,7 @@ use warnings;
 package Template::ShowStartStop;
 use parent qw( Template::Context );
 
-my $sub = qw(process);
-
-my $super = __PACKAGE__->can("SUPER::$sub") or die;
+my $super = __PACKAGE__->can('SUPER::process') or die;
 
 my $wrapped = sub {
 	my $self = shift;
@@ -22,15 +20,15 @@ my $wrapped = sub {
 	my $processed_data = $super->($self, $what, @_);
 
 	my $output
-		= "<!-- START: $sub $template -->\n"
+		= "<!-- START: process $template -->\n"
 		. "$processed_data"
-		. "<!-- STOP:  $sub $template -->\n"
+		. "<!-- STOP:  process $template -->\n"
 		;
 
 	return $output;
 };
 
-{ no strict 'refs'; *{$sub} = $wrapped; }
+*{process} = $wrapped;
 
 1;
 __END__
