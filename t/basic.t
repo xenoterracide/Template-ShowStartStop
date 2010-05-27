@@ -1,11 +1,9 @@
 #!perl -T
 use strict;
 use warnings;
-
-use Test::More;
-
-BEGIN { use_ok( 'Template' ); }
-BEGIN { use_ok( 'Template::ShowStartStop' ); }
+use Template;
+use Template::ShowStartStop;
+use Template::Test;
 
 my $tt = Template->new({
 	CONTEXT => Template::ShowStartStop->new
