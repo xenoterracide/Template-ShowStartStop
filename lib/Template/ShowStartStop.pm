@@ -1,9 +1,10 @@
+use strict;
+use warnings;
+
 package Template::ShowStartStop;
 BEGIN {
   $Template::ShowStartStop::VERSION = '0.08';
 }
-use strict;
-use warnings;
 use parent qw( Template::Context );
 
 my $sub = qw(process);
