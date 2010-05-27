@@ -1,0 +1,38 @@
+Revision history for Template::ShowStartStop
+0.08      May 26 2010
+====================================
+* Change License to Artistic 2.0 because dual license isn't required
+* add basic functionality test
+* simplify documentation
+* add SubmittingPatches documentation
+* add MetaTests
+
+0.07      May 10 2010
+====================================
+Fix Licensing Issues
+
+0.06      May 10 2010
+====================================
+Migrate completely to Dist::Zilla
+
+0.05  Apr 26 2010
+====================================
+change back to ternary.
+remove foreach.
+use Dist::Zilla for packaging
+
+0.04  Mar  1 2010
+====================================
+change from heredoc. I think it's sloppy
+
+0.03  Feb 15 2010
+====================================
+Clean up files for wrong comments
+
+0.02  Jan 26 2010
+====================================
+Show process only comments to remove redunancy
+
+0.01  Jan 25 2010
+====================================
+First rudimentary version.  Patches and comments welcome.

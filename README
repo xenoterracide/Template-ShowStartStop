@@ -1,0 +1,48 @@
+NAME
+    Template::ShowStartStop - Display where template's start and stop
+
+VERSION
+    version 0.08
+
+SYNOPSIS
+            use Template::ShowStartStop;
+
+            my $tt = Template->new({
+                    CONTEXT => Template::ShowStartStop->new
+            });
+
+DESCRIPTION
+    Template::ShowStartStop provides inline comments througout your code
+    where each template stops and starts. It's an overridden version of
+    Template::Context that wraps the "process()" method.
+
+    Using Template::ShowStartStop is simple. Now when you process templates,
+    HTML comments will get embedded in your output, which you can easily
+    grep for. The nesting level is also shown.
+
+            <!-- START: process mainmenu/cssindex.tt -->
+            <!-- STOP:  process mainmenu/cssindex.tt -->
+
+            ....
+
+            <!-- STOP:  process mainmenu/footer.tt -->
+
+BUGS
+    Please report any bugs or feature requests on
+    <http://github.com/xenoterracide/Template-ShowStartStop/issues> as I'm
+    not fond of RT.
+
+ACKNOWLEDGEMENTS
+    Thanks to Andy Lester, Randal Schwartz, Bill Moseley, and to Gavin Estey
+    for the original Template::Timer code that this is based on.
+
+AUTHOR
+      Caleb Cushing <xenoterracide@gmail.com>
+
+COPYRIGHT AND LICENSE
+    This software is Copyright (c) 2010 by Caleb Cushing.
+
+    This is free software, licensed under:
+
+      The Artistic License 2.0
+
