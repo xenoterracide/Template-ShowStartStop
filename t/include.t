@@ -24,3 +24,4 @@ hello world
 <!-- START: process t/templates/how.tt -->
 How are you today?
 <!-- STOP:  process t/templates/how.tt -->
+<!-- STOP:  process input text -->
