@@ -21,3 +21,5 @@ t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/release-synopsis.t
 t/templates/how.tt
+t/templates/wrapper.tt
+t/wrapper.t
