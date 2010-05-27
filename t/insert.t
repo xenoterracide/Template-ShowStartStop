@@ -7,6 +7,7 @@ use Template::Test;
 my $tt = Template->new({
 	CONTEXT => Template::ShowStartStop->new,
 	RELATIVE => 1,
+	INCLUDE_PATH => 't/templates'
 });
 
 my $vars = {
@@ -18,7 +19,7 @@ test_expect(\*DATA, $tt, $vars);
 __DATA__
 --test--
 hello [% var %]
-[% INSERT ./templates/how.tt -%]
+[% INSERT how.tt -%]
 --expect--
 <!-- START: process input text -->
 hello world
