@@ -19,6 +19,6 @@ __DATA__
 -- hello.tt --
 hello [% var %]
 -- expect --
-<!-- START: process input text -->
+<!-- START: process hello.tt -->
 hello world
-<!-- STOP:  process input text -->
+<!-- STOP:  process hello.tt -->
