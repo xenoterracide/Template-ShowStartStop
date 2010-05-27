@@ -24,7 +24,7 @@ my $wrapped = sub {
 
 	my $processed_data = $super->($self, $what, @_);
 
-	( $package, $filename, $line ) = caller;
+	my ( $package, $filename, $line ) = caller;
 
 	my $output
 		= "<!-- START: $sub $line $template -->\n"
