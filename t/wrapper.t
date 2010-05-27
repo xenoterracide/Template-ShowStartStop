@@ -22,7 +22,7 @@ hello [% var %]
 [% PROCESS t/templates/how.tt -%]
 --expect--
 <!-- START: process input text -->
-<!-- START: process wrapper.tt -->
+<!-- START: process t/templates/wrapper.tt -->
 Well,
 hello world
 <!-- STOP:  process t/templates/wrapper.tt -->
