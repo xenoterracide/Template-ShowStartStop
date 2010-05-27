@@ -15,9 +15,10 @@ my $vars = {
 test_expect(\*DATA, $tt, $vars);
 
 __DATA__
---test--
+-- test --
+-- hello.tt --
 hello [% var %]
---expect--
+-- expect --
 <!-- START: process input text -->
 hello world
 <!-- STOP:  process input text -->
