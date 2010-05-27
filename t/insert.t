@@ -18,7 +18,7 @@ test_expect(\*DATA, $tt, $vars);
 __DATA__
 --test--
 hello [% var %]
-[% INSERT templates/how.tt -%]
+[% INSERT ./templates/how.tt -%]
 --expect--
 <!-- START: process input text -->
 hello world
