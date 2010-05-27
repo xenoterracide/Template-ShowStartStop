@@ -5,7 +5,8 @@ use Template::ShowStartStop;
 use Template::Test;
 
 my $tt = Template->new({
-	CONTEXT => Template::ShowStartStop->new
+	CONTEXT => Template::ShowStartStop->new,
+	RELATIVE => 1,
 });
 
 my $vars = {
