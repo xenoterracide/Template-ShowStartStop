@@ -5,7 +5,6 @@ META.yml
 Makefile.PL
 README
 SubmittingPatches
-dist.ini
 lib/Template/ShowStartStop.pm
 t/00-compile.t
 t/000-report-versions.t
@@ -21,4 +20,3 @@ t/release-pod-coverage.t
 t/release-pod-syntax.t
 t/release-synopsis.t
 t/templates/how.tt
-weaver.ini
