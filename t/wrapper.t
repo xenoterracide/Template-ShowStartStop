@@ -18,13 +18,14 @@ __DATA__
 --test--
 [% WRAPPER t/templates/wrapper.tt -%]
 hello [% var %]
-[% END -%]
+[%- END -%]
 [% PROCESS t/templates/how.tt -%]
 --expect--
 <!-- START: process input text -->
 <!-- START: process t/templates/wrapper.tt -->
 Well,
 hello world
+It's a beatiful day.
 <!-- STOP:  process t/templates/wrapper.tt -->
 <!-- START: process t/templates/how.tt -->
 How are you today?
