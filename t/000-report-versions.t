@@ -409,6 +409,7 @@ BEGIN {
       Devel::Cover
       Module::Install
       Moose::Role
+      Template::Test
       Test::Kwalitee
       Test::Pod::Coverage
       Test::Portability::Files

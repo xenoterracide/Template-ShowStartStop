@@ -16,6 +16,7 @@ my %WriteMakefileArgs = (
     'File::Find' => '0',
     'File::Temp' => '0',
     'Scalar::Util' => '0',
+    'Template::Test' => '0',
     'Test::More' => '0.94',
     'perl' => '5.004'
   },
