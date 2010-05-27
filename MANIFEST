@@ -12,6 +12,7 @@ t/basic.t
 t/eval.t
 t/include.t
 t/insert.t
+t/process.t
 t/release-dist-manifest.t
 t/release-distmeta.t
 t/release-has-version.t
