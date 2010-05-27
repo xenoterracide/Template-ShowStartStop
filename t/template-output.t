@@ -4,7 +4,7 @@ use warnings;
 use Template::ShowStartStop;
 use Template::Test;
 
-my $tt = Template::Test->new({
+my $tt = Template->new({
 	CONTEXT => Template::ShowStartStop->new
 });
 
