@@ -19,6 +19,6 @@ __DATA__
 --test--
 hello [% var %]
 --expect--
-<!-- START: process input file handle -->
+<!-- START: process input text -->
 hello world
-<!-- STOP:  process input file handle -->
+<!-- STOP:  process input text -->
