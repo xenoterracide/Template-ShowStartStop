@@ -7,7 +7,7 @@ use Template::Test;
 my $tt = Template->new({
 	CONTEXT => Template::ShowStartStop->new,
 	RELATIVE => 1,
-	INCLUDE_PATH => 't/templates'
+	INCLUDE_PATH => 'templates'
 });
 
 my $vars = {
