@@ -6,7 +6,7 @@ use Template::Test;
 
 my $tt = Template->new({
 	RELATIVE => 1,
-	INCLUDE_PATH => 'templates',
+	INCLUDE_PATH => 't/templates',
 	CONTEXT => Template::ShowStartStop->new,
 });
 
