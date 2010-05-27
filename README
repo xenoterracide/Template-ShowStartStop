@@ -20,12 +20,17 @@ DESCRIPTION
     HTML comments will get embedded in your output, which you can easily
     grep for. The nesting level is also shown.
 
-            <!-- START: process mainmenu/cssindex.tt -->
-            <!-- STOP:  process mainmenu/cssindex.tt -->
-
-            ....
-
-            <!-- STOP:  process mainmenu/footer.tt -->
+            <!-- START: process wrapper.tt -->
+            <!DOCTYPE html>
+            <html>
+            <head>
+            <!-- START: process head.tt -->
+            ...
+            <!-- STOP:  process head.tt -->
+            </head>
+            ...
+            </html>
+            <!-- STOP:  process wrapper.tt -->
 
 BUGS
     Please report any bugs or feature requests on
