@@ -5,9 +5,9 @@ use Template::ShowStartStop;
 use Template::Test;
 
 my $tt = Template->new({
-	CONTEXT => Template::ShowStartStop->new,
 	RELATIVE => 1,
-	INCLUDE_PATH => 'templates'
+	INCLUDE_PATH => 'templates',
+	CONTEXT => Template::ShowStartStop->new,
 });
 
 my $vars = {
