@@ -7,7 +7,7 @@ BEGIN {
 }
 use parent qw( Template::Context );
 
-my $super = __PACKAGE__->can("SUPER::process") or die;
+my $super = __PACKAGE__->can('SUPER::process') or die;
 
 my $wrapped = sub {
 	my $self = shift;
@@ -31,7 +31,7 @@ my $wrapped = sub {
 	return $output;
 };
 
-{ *{process} = $wrapped; }
+*{process} = $wrapped;
 
 1;
 
