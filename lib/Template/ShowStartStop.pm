@@ -7,8 +7,6 @@ BEGIN {
 }
 use parent qw( Template::Context );
 
-my $super = __PACKAGE__->can('SUPER::process') or die;
-
 my $wrapped = sub {
 	my $self = shift;
 	my $what = shift; # what template are we working with
@@ -20,7 +18,7 @@ my $wrapped = sub {
 		:                         $what
 		;
 
-	my $processed_data = $super->($self, $what, @_);
+	my $processed_data = $self->SUPER::process($self, $what, @_);
 
 	my $output
 		= "<!-- START: process $template -->\n"
