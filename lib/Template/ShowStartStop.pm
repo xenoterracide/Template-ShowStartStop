@@ -12,9 +12,9 @@ my $wrapped = sub {
 
 	my $template # get the template filename
 		# conditional           # set $template to
-		= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
-		: ref($what)            ? $what->name
-		:                         $what
+		= ref($what) eq 'ARRAY'  ? join( ' + ', @{$what} )
+		: ref($what)             ? $what->name
+		:                          $what
 		;
 
 	my $processed_data = $super->($self, $what, @_);
