@@ -17,9 +17,11 @@ my $wrapped = sub {
 		# conditional           # set $template to
 		= ref($what) eq 'ARRAY'  ? join( ' + ', @{$what} )
 		: ref($what) eq 'SCALAR' ? '(evaluated block)'
-		: ref($what) eq 'HASH'   ? $what->name
+		: ref($what) eq 'Template::Document' ? $what->name
 		:                          $what
 		;
+
+	my $ref = ref($what);
 
 	my $processed_data = $super->($self, $what, @_);
 
