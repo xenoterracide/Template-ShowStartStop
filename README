@@ -12,7 +12,7 @@ SYNOPSIS
             });
 
 DESCRIPTION
-    Template::ShowStartStop provides inline comments througout your code
+    Template::ShowStartStop provides inline comments throughout your code
     where each template stops and starts. It's an overridden version of
     Template::Context that wraps the "process()" method.
 
