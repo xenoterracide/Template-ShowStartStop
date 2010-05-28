@@ -73,7 +73,7 @@ as I'm not fond of RT.
 
 Please read the SubmittingPatches file included with this Distribution. Patches
 that are of sufficient quality, within the goals of the project and pass the
-checklist will be accepted.
+checklist will probably be accepted.
 
 =head1 ACKNOWLEDGEMENTS
 
