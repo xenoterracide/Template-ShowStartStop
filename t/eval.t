@@ -11,17 +11,14 @@ my $tt = Template->new({
 });
 
 my $vars = {
+	place => 'hat',
 	fragment => "The cat sat on the [% place %]",
 };
-my $block = q{[% thing = 'doohickey' %]};
 
 test_expect(\*DATA, $tt, $vars);
 
-#TODO: { # See RT # 13225
-#    local $TODO = 'Problem identified but not fixed';
-#    my $rc = $tt->process( \*DATA, { block => $block } );
-#    ok( $rc, 'eval' );
-#}
 __DATA__
 -- test --
 [% fragment | eval %]
+-- expect --
+The cat sat on the hat

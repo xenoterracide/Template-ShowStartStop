@@ -16,8 +16,7 @@ my $wrapped = sub {
 	my $template # get the template filename
 		# conditional           # set $template to
 		= ref($what) eq 'ARRAY' ? join( ' + ', @{$what} )
-		: ref($what) eq 'SCALAR' ? '(evaluated block)'
-		: $what->isa('Template::Document') ? $what->name
+		: ref($what->isa('Template::Document')) ? $what->name
 		:                         $what
 		;
 
