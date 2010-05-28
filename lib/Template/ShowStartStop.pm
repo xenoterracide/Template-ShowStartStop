@@ -13,8 +13,8 @@ my $wrapped = sub {
 	my $self = shift;
 	my $what = shift; # what template are we working with
 
-	my $template # get the template filename
-		# conditional           # set $template to
+	my $template
+		# conditional                        # set $template to
 		= ref($what) eq 'Template::Document' ? $what->name
 		: ref($what) eq 'ARRAY'              ? join( ' + ', @{$what} )
 		: ref($what) eq 'SCALAR'             ? '(evaluated block)'
