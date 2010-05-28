@@ -1,6 +1,11 @@
 Revision history for Template::ShowStartStop
 {{$NEXT}}
 
+0.09      May 28 2010
+	- fix bug #13225 for T:SSS
+	- refactor code
+	- add more tests
+
 0.08      May 27 2010
 	- Change License to Artistic 2.0 because dual license isn't required
 	- add more thorough tests
