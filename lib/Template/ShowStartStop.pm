@@ -16,6 +16,7 @@ my $wrapped = sub {
 	my $template
 		# conditional                        # set $template to
 		= ref($what) eq 'Template::Document' ? $what->name
+		: ref($what) eq 'ARRAY'              ? join( ' + ', @{$what} )
 		: ref($what) eq 'SCALAR'             ? '(evaluated block)'
 		:                                      $what
 		;
@@ -34,8 +35,9 @@ my $wrapped = sub {
 *{process} = $wrapped;
 
 1;
+# ABSTRACT: Display where template's start and stop
 
-
+__END__
 =pod
 
 =head1 NAME
@@ -104,6 +106,3 @@ This is free software, licensed under:
 
 =cut
 
-
-__END__
-# ABSTRACT: Display where template's start and stop
