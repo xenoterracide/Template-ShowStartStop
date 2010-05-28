@@ -107,19 +107,3 @@ This is free software, licensed under:
 
 __END__
 # ABSTRACT: Display where template's start and stop
-
-# notes from an IRC conversation on how to improve this module
-[Tuesday 02 March 2010] [04:26:51 pm] <tm604>   xenoterracide: you can get rid
-of foreach, since you only wrap one method, also drop my $super = ...;, remove
-'no strict', change '*{$sub} = sub {' for 'my $wrappedSub = sub {', use 'my
-$processed_data = $self->SUPER::process(...)', and at the end put { no strict
-'refs'; *{'process'} = $wrappedSub; }.
-[Tuesday 02 March 2010] [04:32:10 pm] <xenoterracide>   tm604 would I still
-need the foreach if I was still wrapping include?
-[Tuesday 02 March 2010] [04:32:31 pm] <tm604>   xenoterracide: Not really,
-because it's needless complexity for something that's just subclassing one or
-two methods.
-[Tuesday 02 March 2010] [04:32:49 pm] <xenoterracide>   k
-[Tuesday 02 March 2010] [04:35:08 pm] <tm604>   xenoterracide: Just put the
-common code in a single sub, and have it call include or process as
-appropriate.
