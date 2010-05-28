@@ -43,7 +43,7 @@ my $wrapped = sub {
 
 =head1 DESCRIPTION
 
-Template::ShowStartStop provides inline comments througout your code where
+Template::ShowStartStop provides inline comments throughout your code where
 each template stops and starts.  It's an overridden version of L<Template::Context>
 that wraps the C<process()> method.
 
