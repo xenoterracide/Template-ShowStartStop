@@ -15,10 +15,10 @@ my $wrapped = sub {
 
 	my $template # get the template filename
 		# conditional           # set $template to
-		= ref($what) eq 'ARRAY'  ? join( ' + ', @{$what} )
-		: ref($what) eq 'SCALAR' ? '(evaluated block)'
-		: ref($what) eq 'Template::Document' ? $what->name
-		:                          $what
+		= ref($what) eq 'Template::Document' ? $what->name
+		: ref($what) eq 'ARRAY'              ? join( ' + ', @{$what} )
+		: ref($what) eq 'SCALAR'             ? '(evaluated block)'
+		:                                      $what
 		;
 
 	my $ref = ref($what);
