@@ -32,7 +32,6 @@ my $wrapped = sub {
 *{process} = $wrapped;
 
 1;
-__END__
 # ABSTRACT: Display where template's start and stop
 =head1 SYNOPSIS
 
