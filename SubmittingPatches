@@ -20,7 +20,6 @@ Checklist (and a short version for the impatient):
 	  Certificate of Origin
 	- make sure that you have tests for the bug you are fixing
 	- make sure that the test suite passes after your commit
-	- make sure that you provide any new tests needed
 	- make sure that you provide documentation for any features
 
 	Patch:
