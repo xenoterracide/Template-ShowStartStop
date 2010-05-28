@@ -24,5 +24,6 @@ requires:
   Template::Context: 0
   parent: 0
 resources:
+  bugtracker: http://github.com/xenoterracide/Template-ShowStartStop/issues
   repository: http://github.com/xenoterracide/Template-ShowStartStop
 version: 0.08
