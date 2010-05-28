@@ -17,7 +17,7 @@ my $wrapped = sub {
 		# conditional           # set $template to
 		= ref($what) eq 'ARRAY'  ? join( ' + ', @{$what} )
 		: ref($what) eq 'SCALAR' ? '(evaluated block)'
-		: ref($what)             ? $what->name
+		: ref($what) eq 'HASH'   ? $what->name
 		:                          $what
 		;
 
