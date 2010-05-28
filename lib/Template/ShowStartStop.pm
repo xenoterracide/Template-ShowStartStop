@@ -93,6 +93,12 @@ Please report any bugs or feature requests on
 L<http://github.com/xenoterracide/Template-ShowStartStop/issues>
 as I'm not fond of RT.
 
+=head1 SUBMITTING PATCHES
+
+Please read the SubmittingPatches file included with this Distribution. Patches
+that are of sufficient quality, within the goals of the project and pass the
+checklist will be accepted.
+
 =head1 ACKNOWLEDGEMENTS
 
 Thanks to
