@@ -21,8 +21,6 @@ my $wrapped = sub {
 		:                                      $what
 		;
 
-	my $ref = ref($what);
-
 	my $processed_data = $super->($self, $what, @_);
 
 	my $output
