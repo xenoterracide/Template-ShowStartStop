@@ -18,7 +18,7 @@ use parent qw( Template::Context );
 
 my $super = __PACKAGE__->can('SUPER::process') or die;
 
-my $wrapped = sub {
+*{process} = sub {
 	my $self = shift;
 	my $what = shift; # what template are we working with
 
@@ -40,8 +40,6 @@ my $wrapped = sub {
 
 	return $output;
 };
-
-*{process} = $wrapped;
 
 1;
 # ABSTRACT: Display where template's start and stop
