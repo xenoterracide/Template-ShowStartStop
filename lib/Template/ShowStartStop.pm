@@ -12,7 +12,7 @@ use warnings;
 
 package Template::ShowStartStop;
 BEGIN {
-  $Template::ShowStartStop::VERSION = '0.09';
+  $Template::ShowStartStop::VERSION = '0.10';
 }
 use parent qw( Template::Context );
 
@@ -51,7 +51,7 @@ Template::ShowStartStop - Display where template's start and stop
 
 =head1 VERSION
 
-version 0.09
+version 0.10
 
 =head1 SYNOPSIS
 

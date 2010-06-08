@@ -2,7 +2,7 @@ NAME
     Template::ShowStartStop - Display where template's start and stop
 
 VERSION
-    version 0.09
+    version 0.10
 
 SYNOPSIS
             use Template::ShowStartStop;
