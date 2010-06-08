@@ -4,8 +4,6 @@ use warnings;
 package Template::ShowStartStop;
 use parent qw( Template::Context );
 
-my $super = __PACKAGE__->can('SUPER::process') or die;
-
 sub process {
 	my $self = shift;
 	my $template = shift;
@@ -18,7 +16,7 @@ sub process {
 		:                                          $template
 		;
 
-	my $processed_data = $super->($self, $template, @_);
+	my $processed_data = $self->SUPER::process( $template, @_ );
 
 	my $output
 		= "<!-- START: process $template_id -->\n"
