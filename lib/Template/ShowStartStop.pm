@@ -1,6 +1,3 @@
-use strict;
-use warnings;
-
 package Template::ShowStartStop;
 use parent qw( Template::Context );
 
