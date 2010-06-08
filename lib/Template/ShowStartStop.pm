@@ -16,26 +16,24 @@ BEGIN {
 }
 use parent qw( Template::Context );
 
-my $super = __PACKAGE__->can('SUPER::process') or die;
-
-*{process} = sub {
+sub process {
 	my $self = shift;
-	my $what = shift; # what template are we working with
+	my $template = shift;
 
-	my $template
+	my $template_id
 		# conditional                        # set $template to
-		= ref($what) eq 'Template::Document' ? $what->name
-		: ref($what) eq 'ARRAY'              ? join( ' + ', @{$what} )
-		: ref($what) eq 'SCALAR'             ? '(evaluated block)'
-		:                                      $what
+		= ref($template) eq 'Template::Document' ? $template->name
+		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
+		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
+		:                                          $template
 		;
 
-	my $processed_data = $super->($self, $what, @_);
+	my $processed_data = $self->SUPER::process( $template, @_ );
 
 	my $output
-		= "<!-- START: process $template -->\n"
+		= "<!-- START: process $template_id -->\n"
 		. "$processed_data"
-		. "<!-- STOP:  process $template -->\n"
+		. "<!-- STOP:  process $template_id -->\n"
 		;
 
 	return $output;
