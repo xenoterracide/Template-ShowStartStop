@@ -29,8 +29,9 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'artistic_2',
   'NAME' => 'Template::ShowStartStop',
   'PREREQ_PM' => {
+    'Moose' => '0',
     'Template::Context' => '0',
-    'parent' => '0'
+    'namespace::autoclean' => '0'
   },
   'VERSION' => '0.10',
   'test' => {
