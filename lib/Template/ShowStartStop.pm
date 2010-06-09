@@ -1,9 +1,12 @@
 package Template::ShowStartStop;
-use parent qw( Template::Context );
+use Moose;
+use namespace::autoclean;
 
-sub process {
+extends 'Template::Context';
+
+override 'process' => sub {
 	my $self = shift;
-	my $template = shift;
+	my ( $template ) = @_;
 
 	my $template_id
 		# conditional                        # set $template to
@@ -13,7 +16,7 @@ sub process {
 		:                                          $template
 		;
 
-	my $processed_data = $self->SUPER::process( $template, @_ );
+	my $processed_data = super();
 
 	my $output
 		= "<!-- START: process $template_id -->\n"
@@ -23,7 +26,7 @@ sub process {
 
 	return $output;
 };
-
+__PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
 # ABSTRACT: Display where template's start and stop
 =head1 SYNOPSIS
