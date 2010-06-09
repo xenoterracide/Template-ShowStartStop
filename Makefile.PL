@@ -33,7 +33,7 @@ my %WriteMakefileArgs = (
     'Template::Context' => '0',
     'namespace::autoclean' => '0'
   },
-  'VERSION' => '0.10',
+  'VERSION' => '0.11',
   'test' => {
     'TESTS' => 't/*.t'
   }
