@@ -87,7 +87,7 @@ output, which you can easily grep for.  The nesting level is also shown.
 
 =head1 BUGS
 
-Please report any bugs or feature requests on 
+Please report any bugs or feature requests on
 L<http://github.com/xenoterracide/Template-ShowStartStop/issues>
 as I'm not fond of RT.
 
@@ -107,7 +107,7 @@ and to Gavin Estey for the original Template::Timer code that this is based on.
 
 =head1 AUTHOR
 
-  Caleb Cushing <xenoterracide@gmail.com>
+Caleb Cushing <xenoterracide@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
