@@ -30,6 +30,7 @@ my %WriteMakefileArgs = (
   'NAME' => 'Template::ShowStartStop',
   'PREREQ_PM' => {
     'Moose' => '0',
+    'Moose::Role' => '0',
     'Template::Context' => '0',
     'namespace::autoclean' => '0'
   },
