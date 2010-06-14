@@ -16,6 +16,7 @@ t/insert.t
 t/process.t
 t/release-dist-manifest.t
 t/release-distmeta.t
+t/release-eol.t
 t/release-has-version.t
 t/release-kwalitee.t
 t/release-minimum-version.t

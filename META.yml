@@ -1,5 +1,5 @@
 ---
-abstract: "Display where template's start and stop"
+abstract: 'Display where templates start and stop'
 author:
   - 'Caleb Cushing <xenoterracide@gmail.com>'
 build_requires:

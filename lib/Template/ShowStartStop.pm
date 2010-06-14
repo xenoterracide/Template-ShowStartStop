@@ -42,14 +42,14 @@ override 'process' => sub {
 };
 __PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
-# ABSTRACT: Display where template's start and stop
+# ABSTRACT: Display where templates start and stop
 
 __END__
 =pod
 
 =head1 NAME
 
-Template::ShowStartStop - Display where template's start and stop
+Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
