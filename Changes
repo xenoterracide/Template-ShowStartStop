@@ -1,5 +1,7 @@
 Revision history for Template::ShowStartStop
 {{$NEXT}}
+
+0.12      Jun 14 2010
 	- T:SSS now composes the ShowStopStart Role which really provides the
 	  functionality
 
