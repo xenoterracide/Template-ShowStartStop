@@ -54,6 +54,8 @@ version 0.11
 
 =head1 SYNOPSIS
 
+	use Moose;
+	extends 'Template::Context';
 	with 'MooseX::Template::Context::Role::ShowStartStop';
 
 =head1 BUGS
