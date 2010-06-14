@@ -3,29 +3,8 @@ use Moose;
 use namespace::autoclean;
 
 extends 'Template::Context';
+with 'MooseX::Template::Context::Role::ShowStartStop';
 
-override 'process' => sub {
-	my $self = shift;
-	my ( $template ) = @_;
-
-	my $template_id
-		# conditional                        # set $template to
-		= ref($template) eq 'Template::Document' ? $template->name
-		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
-		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
-		:                                          $template
-		;
-
-	my $processed_data = super();
-
-	my $output
-		= "<!-- START: process $template_id -->\n"
-		. "$processed_data"
-		. "<!-- STOP:  process $template_id -->\n"
-		;
-
-	return $output;
-};
 __PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
 # ABSTRACT: Display where templates start and stop
