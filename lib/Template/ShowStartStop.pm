@@ -11,7 +11,7 @@ use strict;
 use warnings;
 package Template::ShowStartStop;
 BEGIN {
-  $Template::ShowStartStop::VERSION = '0.11';
+  $Template::ShowStartStop::VERSION = '0.12';
 }
 use Moose;
 use namespace::autoclean;
@@ -32,7 +32,7 @@ Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

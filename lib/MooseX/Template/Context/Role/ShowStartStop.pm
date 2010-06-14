@@ -11,7 +11,7 @@ use strict;
 use warnings;
 package MooseX::Template::Context::Role::ShowStartStop;
 BEGIN {
-  $MooseX::Template::Context::Role::ShowStartStop::VERSION = '0.11';
+  $MooseX::Template::Context::Role::ShowStartStop::VERSION = '0.12';
 }
 use Moose::Role;
 
@@ -50,7 +50,7 @@ MooseX::Template::Context::Role::ShowStartStop - Role to Display where templates
 
 =head1 VERSION
 
-version 0.11
+version 0.12
 
 =head1 SYNOPSIS
 

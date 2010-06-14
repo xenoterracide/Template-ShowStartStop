@@ -1,5 +1,7 @@
 Revision history for Template::ShowStartStop
-0.11      Jun 14 2010
+0.12      Jun 14 2010
+	- T:SSS now composes the ShowStopStart Role which really provides the
+	  functionality
 
 0.11      Jun 09 2010
 	- Moosify T:SSS
