@@ -4,7 +4,7 @@ MANIFEST
 META.yml
 Makefile.PL
 README
-SubmittingPatches
+SubmittingPatches.pod
 lib/MooseX/Template/Context/Role/ShowStartStop.pm
 lib/Template/ShowStartStop.pm
 t/00-compile.t
