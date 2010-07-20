@@ -14,18 +14,17 @@ build_requires:
 configure_requires:
   ExtUtils::MakeMaker: 6.31
 dynamic_config: 0
-generated_by: 'Dist::Zilla version 4.101612, CPAN::Meta::Converter version 2.101610'
+generated_by: 'Dist::Zilla version 4.101900, CPAN::Meta::Converter version 2.101670'
 license: artistic_2
 meta-spec:
   url: http://module-build.sourceforge.net/META-spec-v1.4.html
   version: 1.4
 name: Template-ShowStartStop
 requires:
-  Moose: 0
-  Moose::Role: 0
+  SUPER: 0
   Template::Context: 0
-  namespace::autoclean: 0
+  parent: 0
 resources:
   bugtracker: http://github.com/xenoterracide/Template-ShowStartStop/issues
   repository: git://github.com/xenoterracide/Template-ShowStartStop.git
-version: 0.12
+version: 0.2.0

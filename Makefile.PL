@@ -29,12 +29,11 @@ my %WriteMakefileArgs = (
   'LICENSE' => 'artistic_2',
   'NAME' => 'Template::ShowStartStop',
   'PREREQ_PM' => {
-    'Moose' => '0',
-    'Moose::Role' => '0',
+    'SUPER' => '0',
     'Template::Context' => '0',
-    'namespace::autoclean' => '0'
+    'parent' => '0'
   },
-  'VERSION' => '0.12',
+  'VERSION' => '0.2.0',
   'test' => {
     'TESTS' => 't/*.t'
   }

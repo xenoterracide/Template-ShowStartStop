@@ -1,25 +1,40 @@
-#
-# This file is part of Template-ShowStartStop
-#
-# This software is Copyright (c) 2010 by Caleb Cushing.
-#
-# This is free software, licensed under:
-#
-#   The Artistic License 2.0
-#
 use strict;
 use warnings;
 package Template::ShowStartStop;
 BEGIN {
-  $Template::ShowStartStop::VERSION = '0.12';
+  $Template::ShowStartStop::VERSION = '0.2.0';
 }
-use Moose;
-use namespace::autoclean;
+use SUPER;
+use parent 'Template::Context';
 
-extends 'Template::Context';
-with 'MooseX::Template::Context::Role::ShowStartStop';
+sub _template_id {
+	my $template = shift;
 
-__PACKAGE__->meta->make_immutable(inline_constructor => 0);
+	return my $template_id
+		# conditional                        # set $template to
+		= ref($template) eq 'Template::Document' ? $template->name
+		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
+		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
+		:                                          $template
+		;
+}
+
+sub process {
+	my $self = shift;
+	my ( $template ) = @_;
+
+	my $template_id = _template_id($template);
+
+	my $processed_data = super;
+
+	return my $output
+		= "<!-- START: process $template_id -->\n"
+		. "$processed_data"
+		. "<!-- STOP:  process $template_id -->\n"
+		;
+
+};
+no SUPER;
 1;
 # ABSTRACT: Display where templates start and stop
 
@@ -32,7 +47,7 @@ Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
-version 0.12
+version 0.2.0
 
 =head1 SYNOPSIS
 
