@@ -32,7 +32,7 @@ sub process {
 
 	return $output;
 };
-
+no SUPER;
 1;
 # ABSTRACT: Display where templates start and stop
 =head1 SYNOPSIS
