@@ -1,3 +1,5 @@
+use strict;
+use warnings;
 package Template::ShowStartStop;
 use Moose;
 use namespace::autoclean;
