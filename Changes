@@ -1,6 +1,9 @@
 Revision history for Template::ShowStartStop
 {{$NEXT}}
 
+0.2.0     Jul 20 2010
+	- Discontinue Moose usage. I don't see the point for something so simple.
+
 0.12      Jun 14 2010
 	- T:SSS now composes the ShowStopStart Role which really provides the
 	  functionality
