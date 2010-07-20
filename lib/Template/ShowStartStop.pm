@@ -1,12 +1,10 @@
 use strict;
 use warnings;
 package Template::ShowStartStop;
-use Moose;
-use namespace::autoclean;
+use SUPER;
+use parent 'Template::Context';
 
-extends 'Template::Context';
-
-override 'process' => sub {
+sub process {
 	my $self = shift;
 	my ( $template ) = @_;
 
@@ -18,7 +16,7 @@ override 'process' => sub {
 		:                                          $template
 		;
 
-	my $processed_data = super();
+	my $processed_data = super;
 
 	my $output
 		= "<!-- START: process $template_id -->\n"
@@ -28,7 +26,6 @@ override 'process' => sub {
 
 	return $output;
 };
-__PACKAGE__->meta->make_immutable(inline_constructor => 0);
 1;
 # ABSTRACT: Display where templates start and stop
 =head1 SYNOPSIS
