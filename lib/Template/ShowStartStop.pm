@@ -4,17 +4,23 @@ package Template::ShowStartStop;
 use SUPER;
 use parent 'Template::Context';
 
-sub process {
-	my $self = shift;
-	my ( $template ) = @_;
+sub _template_id {
+	my $template = shift;
 
-	my $template_id
+	return my $template_id
 		# conditional                        # set $template to
 		= ref($template) eq 'Template::Document' ? $template->name
 		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
 		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
 		:                                          $template
 		;
+}
+
+sub process {
+	my $self = shift;
+	my ( $template ) = @_;
+
+	my $template_id = _template_id($template);
 
 	my $processed_data = super;
 
@@ -26,6 +32,7 @@ sub process {
 
 	return $output;
 };
+
 1;
 # ABSTRACT: Display where templates start and stop
 =head1 SYNOPSIS
