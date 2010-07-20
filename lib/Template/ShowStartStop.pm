@@ -24,13 +24,12 @@ sub process {
 
 	my $processed_data = super;
 
-	my $output
+	return my $output
 		= "<!-- START: process $template_id -->\n"
 		. "$processed_data"
 		. "<!-- STOP:  process $template_id -->\n"
 		;
 
-	return $output;
 };
 no SUPER;
 1;
