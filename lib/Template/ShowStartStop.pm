@@ -19,20 +19,27 @@ sub _template_id {
 		;
 }
 
+sub output {
+	my ( $processed_template, $template_id ) = @_;
+
+	return my $output
+		= "<!-- START: process $template_id -->\n"
+		. "$processed_template"
+		. "<!-- STOP:  process $template_id -->\n"
+		;
+}
+
 sub process {
 	my $self = shift;
 	my ( $template ) = @_;
 
 	my $template_id = _template_id($template);
 
-	my $processed_data = super;
+	my $processed_template = super;
 
-	return my $output
-		= "<!-- START: process $template_id -->\n"
-		. "$processed_data"
-		. "<!-- STOP:  process $template_id -->\n"
-		;
+	my $output = output( $processed_template, $template_id );
 
+	return $output;
 };
 no SUPER;
 1;
