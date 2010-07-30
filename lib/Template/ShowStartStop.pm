@@ -20,16 +20,6 @@ sub _template_id {
 		;
 }
 
-sub output {
-	my ( $processed_template, $template_id ) = @_;
-
-	return my $output
-		= "<!-- START: process $template_id -->\n"
-		. "$processed_template"
-		. "<!-- STOP:  process $template_id -->\n"
-		;
-}
-
 around 'process' => sub {
 	my $orig = shift;
 	my $self = shift;
@@ -37,13 +27,12 @@ around 'process' => sub {
 
 	my $template_id = _template_id($template);
 
-	return my $output
+	my $output
 		= "<!-- START: process $template_id -->\n"
 		. $self->$orig(@_)
 		. "<!-- STOP:  process $template_id -->\n"
 		;
 };
-no SUPER;
 1;
 # ABSTRACT: Display where templates start and stop
 =head1 SYNOPSIS
