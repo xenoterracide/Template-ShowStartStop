@@ -4,8 +4,9 @@ package Template::ShowStartStop;
 BEGIN {
 	# VERSION
 }
-use SUPER;
-use parent 'Template::Context';
+use Moose;
+use namespace::autoclean;
+extends 'Template::Context';
 
 sub _template_id {
 	my $template = shift;
@@ -29,13 +30,14 @@ sub output {
 		;
 }
 
-sub process {
+around 'process' => sub {
+	my $orig = shift;
 	my $self = shift;
 	my ( $template ) = @_;
 
 	my $template_id = _template_id($template);
 
-	my $processed_template = super;
+	my $processed_template = $self->(@_);
 
 	my $output = output( $processed_template, $template_id );
 
