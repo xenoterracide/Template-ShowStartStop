@@ -37,11 +37,11 @@ around 'process' => sub {
 
 	my $template_id = _template_id($template);
 
-	my $processed_template = $self->$orig(@_);
-
-	my $output = output( $processed_template, $template_id );
-
-	return $output;
+	return my $output
+		= "<!-- START: process $template_id -->\n"
+		. $self->$orig(@_)
+		. "<!-- STOP:  process $template_id -->\n"
+		;
 };
 no SUPER;
 1;
