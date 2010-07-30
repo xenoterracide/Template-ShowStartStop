@@ -37,7 +37,7 @@ around 'process' => sub {
 
 	my $template_id = _template_id($template);
 
-	my $processed_template = $self->(@_);
+	my $processed_template = $self->$orig(@_);
 
 	my $output = output( $processed_template, $template_id );
 
