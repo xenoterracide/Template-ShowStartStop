@@ -19,3 +19,23 @@ sub get_hrtid {
 }
 1;
 # ABSTRACT: creates Human Readable Template IDentifiers
+
+=head1 SYNOPSIS
+
+	with 'Template::Context::TraitFor::HRTID';
+
+	my $template_id = get_hrtid( $templateref );
+
+=head1 DESCRIPTION
+
+=head1 METHODS
+
+=over
+
+=item get_hrtid
+
+this method takes a reference to a template and returns a Human Readable
+Template Identifier which is usually a file name, but might be a block name or
+even just evaluated text.
+
+=back
