@@ -7,25 +7,14 @@ BEGIN {
 use Moose;
 use namespace::autoclean;
 extends 'Template::Context';
-
-sub _template_id {
-	my $template = shift;
-
-	return my $template_id
-		# conditional                        # set $template to
-		= ref($template) eq 'Template::Document' ? $template->name
-		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
-		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
-		:                                          $template
-		;
-}
+with 'Template::Context::TraitFor::HRTID';
 
 around 'process' => sub {
 	my $orig = shift;
 	my $self = shift;
 	my ( $template ) = @_;
 
-	my $template_id = _template_id($template);
+	my $template_id = get_hrtid($template);
 
 	my $output
 		= "<!-- START: process $template_id -->\n"
