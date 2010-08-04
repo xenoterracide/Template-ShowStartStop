@@ -1,6 +1,9 @@
 use strict;
 use warnings;
 package Template::ShowStartStop;
+BEGIN {
+	# VERSION
+}
 use SUPER;
 use parent 'Template::Context';
 
