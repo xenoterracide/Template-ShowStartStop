@@ -7,6 +7,7 @@ BEGIN {
 use Moose::Role;
 
 sub get_hrtid {
+	my $self = shift;
 	my $template = shift;
 
 	return my $template_id
@@ -23,7 +24,7 @@ around 'process' => sub {
 	my $self = shift;
 	my ( $template ) = @_;
 
-	$self->{template_id} = get_hrtid( $template );
+	$self->{template_id} = $self->get_hrtid( $template );
 
 	$self->$orig(@_)
 };
