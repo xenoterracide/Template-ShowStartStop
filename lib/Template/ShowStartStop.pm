@@ -7,21 +7,12 @@ BEGIN {
 use Moose;
 use namespace::autoclean;
 extends 'Template::Context';
-with 'Template::Context::TraitFor::HRTID';
 
-around 'process' => sub {
-	my $orig = shift;
-	my $self = shift;
-	my ( $template ) = @_;
-
-	my $template_id = get_hrtid($template);
-
-	my $output
-		= "<!-- START: process $template_id -->\n"
-		. $self->$orig(@_)
-		. "<!-- STOP:  process $template_id -->\n"
-		;
-};
+# the order of these MATTERS don't change it
+with qw(
+	Template::Context::TraitFor::ShowStartStop
+	Template::Context::TraitFor::HRTID
+);
 1;
 # ABSTRACT: Display where templates start and stop
 =head1 SYNOPSIS

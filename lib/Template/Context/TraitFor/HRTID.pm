@@ -17,6 +17,17 @@ sub get_hrtid {
 		:                                          $template
 		;
 }
+
+around 'process' => sub {
+	my $orig = shift;
+	my $self = shift;
+	my ( $template ) = @_;
+
+	$self->{template_id} = get_hrtid( $template );
+
+	$self->$orig(@_)
+};
+
 1;
 # ABSTRACT: creates Human Readable Template IDentifiers
 
