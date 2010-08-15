@@ -6,6 +6,18 @@ BEGIN {
 }
 use Moose::Role;
 
+has 'tid_stack' => (
+	traits  => ['Array'],
+	lazy    => 1,
+	is      => 'rw',
+	isa     => 'ArrayRef[Str]',
+	default => sub { [] },
+	handles => {
+		push_tid => 'push',
+		pop_tid  => 'pop',
+	},
+);
+
 sub get_hrtid {
 	my $self = shift;
 	my $template = shift;
@@ -24,9 +36,10 @@ around 'process' => sub {
 	my $self = shift;
 	my ( $template ) = @_;
 
-	$self->{template_id} = $self->get_hrtid( $template );
+	my $tid = $self->get_hrtid( $template );
+	$self->push_tid( $tid );
 
-	$self->$orig(@_)
+	$self->$orig(@_);
 };
 
 1;

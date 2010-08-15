@@ -10,10 +10,12 @@ around 'process' => sub {
 	my $orig = shift;
 	my $self = shift;
 
+	my $tid = $self->can('pop_tid') ? $self->pop_tid : '';
+
 	my $output
-		= "<!-- START: process $self->{template_id} -->\n"
+		= "<!-- START: process $tid -->\n"
 		. $self->$orig(@_)
-		. "<!-- STOP:  process $self->{template_id} -->\n"
+		. "<!-- STOP:  process $tid -->\n"
 		;
 };
 1;
