@@ -14,7 +14,6 @@ t/03-process.t
 t/04-insert.t
 t/05-wrapper.t
 t/06-eval.t
-t/author-critic.t
 t/release-check-changes.t
 t/release-dist-manifest.t
 t/release-distmeta.t
