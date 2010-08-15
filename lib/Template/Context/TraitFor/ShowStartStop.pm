@@ -17,3 +17,4 @@ around 'process' => sub {
 		;
 };
 1;
+# ABSTRACT: Trait that show's the start and stop of a template
