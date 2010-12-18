@@ -2,28 +2,22 @@ use strict;
 use warnings;
 package Template::ShowStartStop;
 BEGIN {
-	our $VERSION = 0.22;# VERSION
+	our $VERSION = 0.23;# VERSION
 }
 use SUPER;
 use parent 'Template::Context';
 
-sub _template_id {
-	my $template = shift;
+sub process {
+	my $self = shift;
+	my ( $template ) = @_;
 
-	return my $template_id
+	my $template_id
 		# conditional                        # set $template to
 		= ref($template) eq 'Template::Document' ? $template->name
 		: ref($template) eq 'ARRAY'              ? join( ' + ', @{$template} )
 		: ref($template) eq 'SCALAR'             ? '(evaluated block)'
 		:                                          $template
 		;
-}
-
-sub process {
-	my $self = shift;
-	my ( $template ) = @_;
-
-	my $template_id = _template_id($template);
 
 	my $processed_data = super;
 
@@ -47,7 +41,7 @@ Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
-version 0.22
+version 0.23
 
 =head1 SYNOPSIS
 
@@ -109,7 +103,7 @@ This software is Copyright (c) 2010 by Caleb Cushing.
 
 This is free software, licensed under:
 
-  The Artistic License 2.0
+  The Artistic License 2.0 (GPL Compatible)
 
 =cut
 

@@ -13,6 +13,7 @@ my %WriteMakefileArgs = (
   'AUTHOR' => 'Caleb Cushing <xenoterracide@gmail.com>',
   'BUILD_REQUIRES' => {
     'Carp' => '0',
+    'English' => '0',
     'File::Find' => '0',
     'File::Temp' => '0',
     'Scalar::Util' => '0',
@@ -32,7 +33,7 @@ my %WriteMakefileArgs = (
     'Template::Context' => '0',
     'parent' => '0'
   },
-  'VERSION' => '0.22',
+  'VERSION' => '0.23',
   'test' => {
     'TESTS' => 't/*.t'
   }
