@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Template::ShowStartStop;
 BEGIN {
-	our $VERSION = 0.30.0;# VERSION
+	our $VERSION = 1.0.0;# VERSION
 }
 use SUPER;
 use parent 'Template::Context';
@@ -41,7 +41,7 @@ Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
-version 0.30.0
+version 1.0.0
 
 =head1 SYNOPSIS
 
