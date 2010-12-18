@@ -27,4 +27,4 @@ requires:
 resources:
   bugtracker: http://github.com/xenoterracide/Template-ShowStartStop/issues
   repository: git://github.com/xenoterracide/Template-ShowStartStop.git
-version: 0.23
+version: 0.30.0
