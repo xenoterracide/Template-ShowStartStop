@@ -9,8 +9,7 @@ use SUPER;
 use parent 'Template::Context';
 
 sub process {
-	my $self = shift;
-	my ( $template ) = @_;
+	my ( $self, $template ) = @_;
 
 	my $template_id
 		# conditional                        # set $template to
