@@ -26,6 +26,7 @@ t/release-minimum-version.t
 t/release-pod-coverage.t
 t/release-pod-spell.t
 t/release-pod-syntax.t
+t/release-portability.t
 t/release-unused-vars.t
 t/templates/how.tt
 t/templates/wrapper.tt
