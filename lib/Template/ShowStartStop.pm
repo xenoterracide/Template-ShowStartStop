@@ -2,7 +2,7 @@ use strict;
 use warnings;
 package Template::ShowStartStop;
 BEGIN {
-	our $VERSION = 1.0.0;# VERSION
+	our $VERSION = 1.0.1;# VERSION
 }
 use SUPER;
 use parent 'Template::Context';
@@ -41,7 +41,7 @@ Template::ShowStartStop - Display where templates start and stop
 
 =head1 VERSION
 
-version 1.0.0
+version 1.0.1
 
 =head1 SYNOPSIS
 
@@ -99,7 +99,7 @@ Caleb Cushing <xenoterracide@gmail.com>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2010 by Caleb Cushing.
+This software is Copyright (c) 2011 by Caleb Cushing.
 
 This is free software, licensed under:
 
