@@ -3,7 +3,7 @@ use 5.006;
 use strict;
 use warnings;
 BEGIN {
-	our $VERSION = 1.0.1;# VERSION
+	our $VERSION = '1.0.1'; # VERSION
 }
 use SUPER;
 use parent 'Template::Context';
