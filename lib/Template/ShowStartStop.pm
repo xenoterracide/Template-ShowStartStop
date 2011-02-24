@@ -1,6 +1,7 @@
+package Template::ShowStartStop;
+use 5.006;
 use strict;
 use warnings;
-package Template::ShowStartStop;
 BEGIN {
 	our $VERSION = 1.0.1;# VERSION
 }
