@@ -18,6 +18,7 @@ t/05-wrapper.t
 t/06-eval.t
 t/author-critic.t
 t/release-check-changes.t
+t/release-cpan-changes.t
 t/release-dist-manifest.t
 t/release-distmeta.t
 t/release-eol.t
