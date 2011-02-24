@@ -24,7 +24,7 @@ Revision history for Template::ShowStartStop
 0.10	2010-06-08
 	- refactor code
 
-0.09 	2010-05-27
+0.09 	2010-05-28
 	- fix bug 13225 for T:SSS
 	- refactor code
 	- add more tests
