@@ -2,6 +2,11 @@ Revision history for Template::ShowStartStop
 
 {{$NEXT}}
 
+1.0.1     2011-02-24
+	- Fix VERSION bug instroduced by OurPkgVersion
+	- add generic tests
+	- use Changes Spec for Changes
+
 1.0.0	2010-12-18
 	- oops 0.30.0 < 0.22 bump to 1.0.0 this is stable enough
 
